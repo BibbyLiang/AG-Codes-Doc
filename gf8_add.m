@@ -1,0 +1,18 @@
+clear;
+clc;
+
+% {0xFF, 0x0},
+% {0x0, 0x1},
+% {0x1, 0x2},
+% {0x2, 0x4},
+% {0x3, 0x3},
+% {0x4, 0x6},
+% {0x5, 0x7},
+% {0x6, 0x5}
+data = [1, 2, 4, 3, 6, 7, 5];
+
+a = data(6 + 1);
+b = data(0 + 1);
+c = data(2 + 1);
+sum2 = find(data == bitxor(a, b)) - 1
+sum3 = find(data == (bitxor(bitxor(a, b), c))) - 1
